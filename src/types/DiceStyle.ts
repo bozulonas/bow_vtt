@@ -1,9 +1,5 @@
-export type DiceStyle =
-  | "GALAXY"
-  | "GEMSTONE"
-  | "GLASS"
-  | "IRON"
-  | "NEBULA"
-  | "SUNRISE"
-  | "SUNSET"
-  | "WALNUT";
+export enum DiceStyle {
+  SHARP = "SHARP",
+  ROUNDED = "ROUNDED",
+  GLASS = "GLASS"
+}
