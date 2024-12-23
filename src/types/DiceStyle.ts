@@ -1,5 +1,12 @@
 export enum DiceStyle {
   SHARP = "SHARP",
   ROUNDED = "ROUNDED",
-  GLASS = "GLASS"
+  GLASS = "GLASS",
+  GALAXY = "GALAXY",
+  GEMSTONE = "GEMSTONE",
+  IRON = "IRON",
+  NEBULA = "NEBULA",
+  SUNRISE = "SUNRISE",
+  SUNSET = "SUNSET",
+  WALNUT = "WALNUT"
 }

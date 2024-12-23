@@ -17,10 +17,10 @@ export function StandaloneDiceRoller() {
     setTimeout(() => {
       startRoll({
         dice: [
-          { type: "D6", style: DiceStyle.GLASS, id: "d6-1" },
-          { type: "D6", style: DiceStyle.GLASS, id: "d6-2" },
-          { type: "D6", style: DiceStyle.GLASS, id: "d6-3" },
-          { type: "D6", style: DiceStyle.GLASS, id: "d6-4" }
+          { type: "D6", style: DiceStyle.IRON, id: "d6-1" },
+          { type: "D6", style: DiceStyle.WALNUT, id: "d6-2" },
+          { type: "D6", style: DiceStyle.GALAXY, id: "d6-3" },
+          { type: "D6", style: DiceStyle.NEBULA, id: "d6-4" }
         ],
         hidden: false
       });

@@ -1,16 +1,42 @@
-import Stack from "@mui/material/Stack";
-import Container from "@mui/material/Container";
-
-import { InteractiveTray } from "./tray/InteractiveTray";
-import { Sidebar } from "./controls/Sidebar";
+import React from 'react';
+import { StandaloneDiceRoller } from './standalone/StandaloneDiceRoller';
+import { LegacyClock } from './components/LegacyClock';
 
 export function App() {
   return (
-    <Container disableGutters maxWidth="md">
-      <Stack direction="row" justifyContent="center">
-        <Sidebar />
-        <InteractiveTray />
-      </Stack>
-    </Container>
+    <div style={{ 
+      width: '100vw', 
+      height: '100vh',
+      backgroundColor: '#282c34',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      padding: '20px',
+      gap: '20px'
+    }}>
+      <div style={{
+        display: 'flex',
+        gap: '20px',
+        border: '1px solid red',
+        padding: '20px'
+      }}>
+        <div style={{ border: '1px solid yellow', width: '300px', height: '300px' }}>
+          <LegacyClock 
+            progress={2} 
+            segments={6} 
+          />
+        </div>
+        
+        <div style={{ border: '1px solid yellow', width: '300px', height: '300px' }}>
+          <LegacyClock 
+            progress={3} 
+            segments={8} 
+            badClock={true}
+          />
+        </div>
+      </div>
+
+      <StandaloneDiceRoller />
+    </div>
   );
 }

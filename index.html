@@ -2,12 +2,42 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dice</title>
+    <title>Clock & Dice</title>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+    <script>
+      window.d = function(tag, ...children) {
+        return jQuery(`<div class="${tag}"></div>`).append(...children);
+      };
+
+      window.input = function(c, attributes) {
+        let e = jQuery(`<input class="${c}">`);
+        for (let k in attributes) {
+          e.attr(k, attributes[k]);
+        }
+        return e;
+      };
+    </script>
+    <link rel="stylesheet" href="/css/body.css">
+    <script src="/js/script.js"></script>
   </head>
-  <body>
-    <div id="root"></div>
+  <body style="background: #282c34;">
+    <div id="test-clock"></div>
+    <div id="dice-root"></div>
+    
+    <script>
+      $(document).ready(function() {
+        const clock = window.d.clock({
+          description: 'Test Clock',
+          good: false,
+          max: 6,
+          progress: 2
+        });
+        $('#test-clock').append(clock);
+      });
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

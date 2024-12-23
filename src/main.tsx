@@ -1,20 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
+import { StandaloneDiceRoller } from "./standalone/StandaloneDiceRoller";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from "@mui/material/CssBaseline";
 
-import { App } from "./App";
-import "simplebar-react/dist/simplebar.min.css";
-import "./fonts/fonts.css";
-import { GlobalStyles } from "./GlobalStyles";
-import { PluginThemeProvider } from "./plugin/PluginThemeProvider";
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById("dice-root") as HTMLElement).render(
   <React.StrictMode>
-    <PluginThemeProvider>
+    <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <GlobalStyles />
-      <App />
-    </PluginThemeProvider>
+      <StandaloneDiceRoller />
+    </ThemeProvider>
   </React.StrictMode>
-);
+); 
